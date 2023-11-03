@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MS Auth POC</title>
+
+    <!-- msal.js with a fallback to backup CDN -->
+      <script src="https://alcdn.msauth.net/browser/2.30.0/js/msal-browser.js"
+ integrity="sha384-o4ufwq3oKqc7IoCcR08YtZXmgOljhTggRwxP2CLbSqeXGtitAxwYaUln/05nJjit"
+ crossorigin="anonymous"></script> 
+
+    <!-- adding Bootstrap 4 for UI components  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+  </head>
+  <body>
+    <br>
+    <h5 class="card-header text-center" id="signInContainer"><button type="button" id="signIn" class="btn btn-secondary" onclick="signIn()">Sign In & View Profile</button></h5>
+    <h5 class="card-header text-center d-none" id="welcomeContainer">
+      <div id="welcomeText" style="font-style: italic;      color: darkgreen;      font-size: 25px; "></div>
+      <div id="jobTitle" style="font-size: 15px; margin-top: 15px;"></div>
+      <div id="officeLocation" style="font-size: 15px; margin-top: 15px;"></div>
+      <div id="mail" style="font-size: 15px; margin-top: 15px;"></div>
+      <div id="businessPhones" style="font-size: 15px; margin-top: 15px;"></div>
+    </h5>
+    <script type="text/javascript" src="./index.js"></script>
+    <script src="https://unpkg.com/@microsoft/mgt@3/dist/bundle/mgt-loader.js"></script>
+
+    <mgt-msal2-provider client-id="8faa8733-537f-4dd5-b32b-dcfcf3edc652" authority="https://login.microsoftonline.com/ad6c89a6-9fea-42d7-b746-f9f75542d943"></mgt-msal2-provider>
+    <h5 class="card-header text-center" style="margin-top: 50px;"><mgt-login></mgt-login></h5>
+    <mgt-get class="text-center" resource="me/photo/$value" type="image">
+        <template>
+            <img style="height: 120px; width: 100px; margin-top: 20px; margin-left: 20px;" class="rounded" src="{{image}}"/>
+        </template>
+    </mgt-get>
+  </body>
+</html>
