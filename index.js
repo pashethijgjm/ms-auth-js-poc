@@ -1,10 +1,5 @@
 async function signIn(){
     const config = {
-        // auth: {
-        //     clientId: "8faa8733-537f-4dd5-b32b-dcfcf3edc652",
-        //     authority: "https://login.microsoftonline.com/ad6c89a6-9fea-42d7-b746-f9f75542d943",
-        //     redirectUri: "http://localhost:8080/",
-        //   }
         auth: {
                 clientId: "1ed7e070-fcee-4fdd-8530-d4cb607a5c72",
                 authority: "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47",
